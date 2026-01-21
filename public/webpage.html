@@ -1,1 +1,200 @@
-<!doctype html><html><head><meta charset='utf-8'><title>HTTP Server</title></head><body><h1>It works!</h1><p>Small HTTP server running.</p><img src='/image.jpg' alt='image' style='max-width:320px;'/></body></html>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KIWI for smart solutions</title>
+
+  <style>
+    body{
+      margin:0;
+      font-family:Arial, sans-serif;
+      background:#f7f7f7;
+      color:#222;
+      line-height:1.8
+    }
+
+    /* ===== Hero Section ===== */
+    header{
+      position:relative;
+      height:600px;
+      background-image:url("image.jpg");
+      background-size:cover;
+      background-position:center;
+      color:#fff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+    }
+
+    header::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:rgba(15,23,42,0.65); 
+    }
+
+    .hero-content{
+      position:relative;
+      max-width:800px;
+      padding:20px;
+    }
+
+    header h1{
+      margin:0;
+      font-size:36px;
+    }
+
+    header p{
+      margin:12px 0 0;
+      font-size:18px;
+      opacity:0.95;
+    }
+
+    .btn{
+      display:inline-block;
+      margin-top:20px;
+      background:#16a34a;
+      color:#fff;
+      text-decoration:none;
+      padding:12px 18px;
+      border-radius:10px;
+      font-weight:bold;
+    }
+
+    /* ===== Content ===== */
+    .container{
+      max-width:900px;
+      margin:0 auto;
+      padding:20px 16px
+    }
+
+    .card{
+      background:#fff;
+      border:1px solid #e5e7eb;
+      border-radius:14px;
+      padding:18px;
+      margin:14px 0
+    }
+
+    h2{margin:0 0 10px;font-size:22px}
+
+    ul{margin:0;padding:0 18px}
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:12px
+    }
+
+    footer{
+      padding:18px;
+      text-align:center;
+      color:#666
+    }
+
+    .small{font-size:13px;color:#666}
+
+    input, textarea{
+      width:100%;
+      padding:10px;
+      border:1px solid #e5e7eb;
+      border-radius:10px;
+      font-size:15px
+    }
+
+    label{display:block;margin:10px 0 6px}
+
+    button{
+      background:#0f172a;
+      color:#fff;
+      border:none;
+      padding:10px 16px;
+      border-radius:10px;
+      cursor:pointer
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Hero -->
+  <header>
+    <div class="hero-content">
+      <h1>KIWI for smart solutions</h1>
+      <p>Простые и умные технологические решения для вашего бизнеса</p>
+      <a class="btn" href="#contact">Связаться с нами</a>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="card" id="about">
+      <h2>О компании</h2>
+      <p>
+        Компания <strong>KIWI for smart solutions</strong> предоставляет умные
+        технологические решения, которые помогают бизнесу оптимизировать процессы,
+        повысить эффективность и создавать современные цифровые продукты.
+      </p>
+      <p class="small">Вы можете изменить этот текст под деятельность компании.</p>
+    </section>
+
+    <section class="card" id="services">
+      <h2>Наши услуги</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Разработка сайтов</h3>
+          <p class="small">Быстрые и адаптивные сайты.</p>
+        </div>
+        <div class="card">
+          <h3>Приложения и системы</h3>
+          <p class="small">Системы управления и автоматизация процессов.</p>
+        </div>
+        <div class="card">
+          <h3>Технический консалтинг</h3>
+          <p class="small">Оптимальные решения и план реализации.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card" id="why">
+      <h2>Почему KIWI?</h2>
+      <ul>
+        <li>Простой и практичный подход</li>
+        <li>Быстрая реализация</li>
+        <li>Решения под ваш бюджет</li>
+      </ul>
+    </section>
+
+    <section class="card" id="contact">
+      <h2>Связаться с нами</h2>
+
+      <form onsubmit="event.preventDefault(); alert('Сообщение получено (демо).');">
+        <label>Имя</label>
+        <input type="text" placeholder="Введите имя" required>
+
+        <label>Email</label>
+        <input type="email" placeholder="example@email.com" required>
+
+        <label>Сообщение</label>
+        <textarea rows="4" placeholder="Чем можем помочь?" required></textarea>
+
+        <div style="margin-top:12px">
+          <button type="submit">Отправить</button>
+        </div>
+      </form>
+    </section>
+
+  </main>
+
+  <footer>
+    © <span id="year"></span> KIWI for smart solutions — Все права защищены
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>

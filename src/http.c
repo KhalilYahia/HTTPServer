@@ -6,7 +6,6 @@ static long HttpGetFileSizeBytes(const char *filePath)
 {
     FileStatusStruct fileStatus;
     if (FileStatusFunction(filePath, &fileStatus) != 0) {
-        printf("ssss");
         return -1;
     }
     return (long)fileStatus.st_size;
