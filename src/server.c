@@ -150,7 +150,6 @@ void ServerHandleClientConnection(SocketHandle clientSocket,
             httpStatusCode = 200;
             LoggerWriteHttpRequest(clientIpAddress, httpMethod, urlPath, httpStatusCode);
         } else {
-            printf("error");
             httpStatusCode = 404;
             LoggerWriteHttpRequest(clientIpAddress, httpMethod, urlPath, httpStatusCode);
             (void)HttpSendSimpleHtmlResponse(clientSocket, HttpStatusText404, HttpBody404);

@@ -187,7 +187,6 @@ int HttpSendFileResponse(SocketHandle clientSocket,
    
     long fileSize = HttpGetFileSizeBytes(filePath);
     if (fileSize < 0) {
-        printf("%d \n",fileSize);
         return -1;
     }
 

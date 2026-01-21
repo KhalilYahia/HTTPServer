@@ -50,4 +50,11 @@
 #define CONFIG_LOGGING_STDOUT_ENABLE 1
 #endif
 
+#if !CONFIG_LOGGING_STDOUT_ENABLE
+  /* Prevent accidental stdio usage in “no-stdio” builds */
+  #define printf(...)  0
+  #define fprintf(...) 0
+  #define snprintf(...) 0
+#endif
+
 #endif /* CONFIG_H */
