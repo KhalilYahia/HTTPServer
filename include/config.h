@@ -52,9 +52,8 @@
 
 #if !CONFIG_LOGGING_STDOUT_ENABLE
   /* Prevent accidental stdio usage in “no-stdio” builds */
-  #define printf(...)  0
-  #define fprintf(...) 0
-  #define snprintf(...) 0
+  #define printf(...)  DO_USE_PRINTF_IF_STDIO_ISNOT_DEFINED
+  #define fprintf(...) DO_USE_FPRINTF_IF_STDIO_ISNOT_DEFINED
 #endif
 
 #endif /* CONFIG_H */

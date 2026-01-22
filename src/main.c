@@ -14,7 +14,7 @@ int main()
     int portNumber = 8080;
     const char *rootDirectory = "public";
     
-    printf("Starting HTTP server...\n");
+    //printf("Starting HTTP server...\n");
 
     if (NetworkInitialize() != 0) {
         LoggerWriteError("Network initialization failed");
